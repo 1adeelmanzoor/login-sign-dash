@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  font-size: 16px;
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #f4f4f7;
+  -webkit-box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.gender {
+  margin: 10px 0;
+}
+
+.login {
+  cursor: pointer;
+}
+
+.sign_up {
+  cursor: pointer;
+}
+
+.signUp {
+  color: blue;
+  cursor: pointer;
+}
+
+.Login {
+  color: blue;
+  cursor: pointer;
+}
+
+.header {
+  height: 20%;
+}
+
+.nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 40px;
+  background-color: white;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#use {
+  margin-right: 20px;
+  color: #424442;
+}
+
+#remove {
+  height: 2.5rem;
+  width: 6rem;
+  font-size: 24px;
+  background-color: #27d427;
+  border-radius: 6px;
+  border: 1px solid #27d427;
+  color: white;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+  background-color: #e1e3ea;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.app {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 90%;
+  }
+}
+
+.app h1 {
+  color: white;
+  font-size: 40px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #27d427;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.app form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #407740;
+}
+
+.app form input {
+  border: none;
+  background-color: #84c084;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  width: 90%;
+}
+
+.app form button {
+  border: none;
+  color: white;
+  background-color: #27d427;
+  font-size: 25px;
+  font-weight: 600;
+  height: 42px;
+  width: 10%;
+}
+
+.app ul {
+  list-style: none;
+  color: #e0e0e0;
+  padding: 0;
+}
+
+.app ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  background-color: #262e4c;
+  border-bottom: 1px solid #3a4674;
+}
+
+.check {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid white;
+  -webkit-appearance: none;
+}
+
+.check:checked {
+  background-color: #27d427;
+}
+
+.del {
+  width: 1.5em;
+  height: 1.5em;
+  color: #27d427;
+  cursor: pointer;
+}
+
+.task {
+  font-size: 18px;
+  padding: 0 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: transparent;
+  border: none;
+  color: #fff;
+}
+
+.task:focus {
+  outline: none;
+}
+
+.app ul li i {
+  float: right;
+  cursor: pointer;
+}
+
+.app ul li i:hover {
+  color: #ff5252;
+}
+
+.completed {
+  color: rgba(39, 212, 39, 0.8);
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=style.css.map */
