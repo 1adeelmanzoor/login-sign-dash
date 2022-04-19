@@ -168,7 +168,7 @@ window.onload = loadTasks;
               }
             });
             localStorage.setItem("users", JSON.stringify(users));
-            alert("description is edited");
+            alert("description is edited ");
           }
         });
       }
@@ -222,7 +222,24 @@ users.forEach((element) => {
         }
       });
       localStorage.setItem("activeUser", JSON.stringify(activeUser));
+
+
+let users = JSON.parse(localStorage.getItem("users"));
+users.forEach((element) => {
+// debugger;
+if (element.email === activeUser.email) {
+let items = element.todos;
+items.forEach((task) => {
+if (task.description === event.nextElementSibling.value) {
+task.completed = !task.completed;
+}
+});
+}
+});
+
+localStorage.setItem("users", JSON.stringify(users));
       event.nextElementSibling.classList.toggle("completed");
+      
    
     }
          </script>

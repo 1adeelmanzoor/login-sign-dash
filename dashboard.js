@@ -162,5 +162,8 @@ function taskComplete(event) {
     }
   });
   localStorage.setItem("activeUser", JSON.stringify(activeUser));
+  debugger;
+  //
+
   event.nextElementSibling.classList.toggle("completed");
 }
