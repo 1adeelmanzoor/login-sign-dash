@@ -196,6 +196,7 @@ input[type="submit"] {
 }
 
 .check {
+  margin-right: 10px;
   width: 1.5em;
   height: 1.5em;
   cursor: pointer;
@@ -210,6 +211,15 @@ input[type="submit"] {
 }
 
 .del {
+  width: 1.5em;
+  height: 1.5em;
+  color: #27d427;
+  cursor: pointer;
+}
+
+.edit {
+  margin-right: 15px;
+  margin-left: 10px;
   width: 1.5em;
   height: 1.5em;
   color: #27d427;
