@@ -109,12 +109,12 @@ window.onload = loadTasks;
       todos_item.forEach((task , index) => {
         const list = document.querySelector("ul");
         const li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)">
+        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)" ${task.completed ? 'checked' : ''}>
         
-          <input type="text" value="${task.description}" class="edited" onfocus="getCurrentTask(this)" >
+          <input type="text" value="${task.description}" class="edited ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" >
            <ion-icon name="create-outline" class="edit" onclick ="editTask(this)"></ion-icon>
          <ion-icon class="del" name="trash-outline" onclick="removeTask(this)"></ion-icon>`;
-        //  debugger;
+         
         list.insertBefore(li, list.children[0]);
       });
     }
@@ -124,7 +124,7 @@ window.onload = loadTasks;
  
         const list = document.querySelector("ul");
         const li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)">
+        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)" >
           <input type="text" value=${JSON.stringify(des)} class="edited" onfocus="getCurrentTask(this)" >
           <ion-icon name="create-outline" class="edit" onclick ="editTask(this)"></ion-icon>
          <ion-icon class="del" name="trash-outline"  onclick="removeTask(this)"></ion-icon>`;
@@ -239,8 +239,6 @@ task.completed = !task.completed;
 
 localStorage.setItem("users", JSON.stringify(users));
       event.nextElementSibling.classList.toggle("completed");
-      
-   
     }
          </script>
   </body>
