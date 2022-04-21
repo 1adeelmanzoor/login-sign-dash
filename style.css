@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .form {
@@ -12,11 +12,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -27,14 +27,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 h1 {
@@ -51,7 +51,7 @@ input[type="submit"] {
   border-radius: 5px;
   border: 2px solid #f4f4f7;
   -webkit-box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.2);
 }
 
 .gender {
@@ -86,15 +86,51 @@ input[type="submit"] {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 40px;
   background-color: white;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
-
+.task-com-un-all {
+  display: flex;
+  justify-content: center;
+}
+#complete {
+  cursor: pointer;
+  margin-right: 20px;
+  height: 2.5rem;
+  width: 8rem;
+  font-size: 20px;
+  background-color: #27d427;
+  border-radius: 6px;
+  border: 1px solid #27d427;
+  color: white;
+}
+#uncomplete {
+  cursor: pointer;
+  margin-right: 20px;
+  height: 2.5rem;
+  width: 8rem;
+  font-size: 20px;
+  background-color: #27d427;
+  border-radius: 6px;
+  border: 1px solid #27d427;
+  color: white;
+}
+#all {
+  cursor: pointer;
+  margin-right: 20px;
+  height: 2.5rem;
+  width: 8rem;
+  font-size: 20px;
+  background-color: #27d427;
+  border-radius: 6px;
+  border: 1px solid #27d427;
+  color: white;
+}
 #use {
   margin-right: 20px;
   color: #424442;
@@ -116,11 +152,11 @@ input[type="submit"] {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-top: 50px;
   background-color: #e1e3ea;
   height: 100vh;
@@ -185,14 +221,14 @@ input[type="submit"] {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 10px;
-  background-color: #262e4c;
-  border-bottom: 1px solid #3a4674;
+  background-color: rgba(224, 218, 218, 0.133);
+  border-bottom: 1px solid #27d427;
 }
 
 .check {

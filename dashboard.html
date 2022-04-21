@@ -15,28 +15,43 @@
   </head>
   <body>
 
-
-    <div class="header">
-      <div class="nav">
-
-        <h1 id="use"> name:</h1>
-        <button id="remove" onclick="myFun()">logout</button>
-
+    <div>
+      <div class="header">
+        <div class="nav">
+          <h1 id="use"> name:</h1>
+          <button id="remove" onclick="myFun()">logout</button>
+        </div>
 
       </div>
-
     </div>
+
+    <div class="task-com-un-all">
+      <button type="button" id="all">all</button>
+      <button type="button" id="complete">completed</button>
+      <button type="button" id="uncomplete">uncompleted</button>
+    </div>
+
 
     <div class="container">
       <div class="app">
-        <h1>TO work done</h1>
+        <h1>TODO LIST</h1>
         <form>
-          <input type="text" placeholder="Add task"
+          <input style="border-radius:0px; border: 1px solid #84c084; height:
+            100%; outline: #27d427;" type="text" placeholder="Add task"
             class="description">
           <button type="button" class="add_description">&plus;</button>
+          <input type="button" class="clear" value="clear all" style="width:
+            10%; cursor: pointer;" onclick="clearTodo(this)">
+
+          <!-- <select class="select-type">
+            <option id="select-all" value="all">All</option>
+            <option id="select_completed" value="completed">Complete</option>
+            <option id="select-UnCompleted" value="UnCompleted">UnCompleted</option>
+          </select> -->
         </form>
 
-        <ul></ul>
+
+        <ul id="rem"></ul>
       </div>
     </div>
 
@@ -99,7 +114,7 @@
            document.querySelector("form").reset();
          });
        
-window.onload = loadTasks;
+    window.onload = loadTasks;
     function loadTasks() {
    
       let activeUser = JSON.parse(localStorage.getItem("activeUser"));
@@ -188,7 +203,7 @@ function removeTask(event) {
 
       });
       //  localStorage.setItem("users", JSON.stringify(users));
-      event.parentElement.remove();
+      
 
       
   let users = JSON.parse(localStorage.getItem("users"));
@@ -210,6 +225,7 @@ users.forEach((element) => {
       });
                 }
             });
+            event.parentElement.remove();
           
     }
      function taskComplete(event) {
@@ -240,6 +256,117 @@ task.completed = !task.completed;
 localStorage.setItem("users", JSON.stringify(users));
       event.nextElementSibling.classList.toggle("completed");
     }
+
+    function clearTodo(event){
+       let activeUser = JSON.parse(localStorage.getItem("activeUser"));
+     
+      let todos_item = activeUser.todos;
+      todos_item.length=0;
+      localStorage.setItem("activeUser", JSON.stringify(activeUser));
+
+      
+
+      let myList = document.getElementById('rem')
+      myList.remove();
+      
+      // myList.innerHTML = '';
+    }
+
+    let all = document.querySelector('#all');
+    let complete = document.querySelector('#complete');
+    let uncomplete = document.querySelector('#uncomplete');
+    
+    let ul_node = document.getElementById("rem");
+
+   
+    function allComUn(){
+            while (ul_node.firstChild) {
+      ul_node.removeChild(ul_node.firstChild);    
+}
+loadTasks();
+    }
+
+
+
+
+    function completed(){
+      while (ul_node.firstChild) {
+      ul_node.removeChild(ul_node.firstChild);    
+}
+     
+      let activeUser = JSON.parse(localStorage.getItem("activeUser"));
+      let todos_item = activeUser.todos;
+
+      todos_item.forEach(task => {
+
+         let list = document.querySelector("ul");
+        let li = document.createElement("li");
+        if (task.completed === true) {  
+        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)" ${task.completed ? 'checked' : ''}>
+        
+          <input type="text" value="${task.description}" class="edited ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" >
+           <ion-icon name="create-outline" class="edit" onclick ="editTask(this)"></ion-icon>
+         <ion-icon class="del" name="trash-outline" onclick="removeTask(this)"></ion-icon>`;
+         
+        list.insertBefore(li, list.children[0]);
+        }
+      });
+
+    }
+
+
+      function unCompleted(){
+      while (ul_node.firstChild) {
+      ul_node.removeChild(ul_node.firstChild);    
+}
+     
+      let activeUser = JSON.parse(localStorage.getItem("activeUser"));
+      let todos_item = activeUser.todos;
+
+      todos_item.forEach(task => {
+
+         let list = document.querySelector("ul");
+        let li = document.createElement("li");
+        if (!task.completed === true) {  
+        li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)" ${task.completed ? 'checked' : ''}>
+        
+          <input type="text" value="${task.description}" class="edited ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" >
+           <ion-icon name="create-outline" class="edit" onclick ="editTask(this)"></ion-icon>
+         <ion-icon class="del" name="trash-outline" onclick="removeTask(this)"></ion-icon>`;
+         
+        list.insertBefore(li, list.children[0]);
+        }
+      });
+
+    }
+
+    complete?.addEventListener("click",completed);
+    uncomplete?.addEventListener("click",unCompleted);
+    all?.addEventListener("click",allComUn);
+
+    //  function loadTasks() {
+   
+    //   let activeUser = JSON.parse(localStorage.getItem("activeUser"));
+    //   let todos_item = activeUser.todos;
+    
+ 
+    //   todos_item.forEach((task , index) => {
+    //     const list = document.querySelector("ul");
+    //     const li = document.createElement("li");
+    //     li.innerHTML = `<input type="checkbox" class="check" onclick="taskComplete(this)" ${task.completed ? 'checked' : ''}>
+        
+    //       <input type="text" value="${task.description}" class="edited ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" >
+    //        <ion-icon name="create-outline" class="edit" onclick ="editTask(this)"></ion-icon>
+    //      <ion-icon class="del" name="trash-outline" onclick="removeTask(this)"></ion-icon>`;
+         
+    //     list.insertBefore(li, list.children[0]);
+    //   });
+    // }
+    // sc.addEventListener('click',function(){
+
+
+    // });
+    
          </script>
   </body>
 </html>
