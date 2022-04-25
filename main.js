@@ -15,11 +15,13 @@ let activeName = document.querySelector("#activeUser");
 let logout = document.querySelector("#remove");
 
 go_sign_up?.addEventListener("click", () => {
-  window.location = "http://127.0.0.1:5500/sign_up.html";
+  // window.location = "http://127.0.0.1:5500/";
+  window.location.href = "sign_up.html";
 });
 
 go_login?.addEventListener("click", function () {
-  window.location = "http://127.0.0.1:5500/login.html";
+  // window.location = "http://127.0.0.1:5500/login.html";
+  window.location.href = "login.html";
 });
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -45,11 +47,6 @@ function saveData(e) {
       age: aaage,
       contact: cccontact,
       todos: [],
-      // g1: () => {
-      //   document.querySelector("input[name=gender]:checked");
-      //   g1 = g1 ? g1.value : "";
-      // localStorage.setItem("g1", g1);
-      // },
     });
 
     localStorage.setItem("users", JSON.stringify(users));
@@ -89,11 +86,3 @@ function getData(e) {
 }
 sign_up?.addEventListener("click", saveData);
 login?.addEventListener("click", getData);
-
-// var activeUser = JSON.parse(localStorage.getItem("activeUser"));
-// console.log(
-//   "FirstName LastName"
-//     .split(" ")
-//     .map((n) => n[0])
-//     .join("")
-// );
